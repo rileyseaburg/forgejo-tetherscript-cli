@@ -21,18 +21,54 @@ commands:
   post <api-path> <json-body>
 ```
 
-## Build
+## Install tetherscript
 
-From the tetherscript repository or anywhere `tetherscript` is on `PATH`:
+Install the published tetherscript compiler/runner from crates.io:
+
+```sh
+cargo install tetherscript --version 0.1.0-alpha.19
+```
+
+Confirm it is available on your `PATH`:
+
+```sh
+tetherscript --help
+```
+
+If Cargo's bin directory is not on your `PATH`, add it first.
+
+Windows PowerShell:
+
+```powershell
+$env:PATH += ";$env:USERPROFILE\.cargo\bin"
+```
+
+macOS/Linux shell:
+
+```sh
+export PATH="$HOME/.cargo/bin:$PATH"
+```
+
+## Compile this CLI
+
+From this repository root, compile the tetherscript source into a standalone binary.
+
+Windows:
+
+```powershell
+tetherscript build src/forgejo_cli.tether -o forgejo-cli.exe
+```
+
+macOS/Linux:
 
 ```sh
 tetherscript build src/forgejo_cli.tether -o forgejo-cli
 ```
 
-On Windows from the tetherscript repository:
+Exact command used during local validation from the adjacent tetherscript source checkout:
 
-```sh
-cargo run --quiet -- build ../forgejo-tetherscript-cli/src/forgejo_cli.tether -o ../forgejo-tetherscript-cli/forgejo-cli.exe
+```powershell
+cargo run --quiet --manifest-path ../tetherscript/Cargo.toml -- build src/forgejo_cli.tether -o forgejo-cli.exe
 ```
 
 ## Usage
