@@ -91,3 +91,7 @@ FORGEJO_TOKEN=... ./forgejo-cli user
 ## Source
 
 The CLI implementation lives in `src/forgejo_cli.tether`.
+
+## License
+
+MIT. See `LICENSE-MIT`.
